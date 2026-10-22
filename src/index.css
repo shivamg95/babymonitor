@@ -1,0 +1,83 @@
+@import "tailwindcss";
+
+/* Theme tokens. Night mode only swaps the CSS variables below (html.night). */
+@theme {
+  --color-page: var(--page);
+  --color-surface: var(--surface);
+  --color-surface-2: var(--surface-2);
+  --color-ink: var(--ink);
+  --color-muted: var(--muted);
+  --color-line: var(--line);
+  --color-accent: var(--accent);
+  --color-on-accent: var(--on-accent);
+  --color-danger: var(--danger);
+  --color-on-action: var(--on-action);
+  --color-milk: var(--c-milk);
+  --color-urine: var(--c-urine);
+  --color-potty: var(--c-potty);
+  --color-both: var(--c-both);
+  --color-sleep: var(--c-sleep);
+  --color-med: var(--c-med);
+}
+
+:root {
+  --page: #f4f6fb;
+  --surface: #ffffff;
+  --surface-2: #e9edf7;
+  --ink: #1d2233;
+  --muted: #6b7289;
+  --line: #d9deea;
+  --accent: #5b6cf0;
+  --on-accent: #ffffff;
+  --danger: #d6455d;
+  --on-action: #ffffff;
+  --c-milk: #2f7de1;
+  --c-urine: #d9a300;
+  --c-potty: #8a5a2b;
+  --c-both: #7c4dd6;
+  --c-sleep: #4850c4;
+  --c-med: #d63a6a;
+  color-scheme: light;
+}
+
+/* 3 AM night mode: low-blue, dim warm amber on near-black. */
+html.night {
+  --page: #0a0704;
+  --surface: #150e08;
+  --surface-2: #1f150c;
+  --ink: #ffb262;
+  --muted: #a06f36;
+  --line: #3a2612;
+  --accent: #c9742a;
+  --on-accent: #120a04;
+  --danger: #e0643f;
+  --on-action: #ffd7a3;
+  --c-milk: #6b3e10;
+  --c-urine: #6e5110;
+  --c-potty: #5a3a1a;
+  --c-both: #5b3a18;
+  --c-sleep: #3e3a22;
+  --c-med: #6a2a1a;
+  color-scheme: dark;
+}
+
+@layer base {
+  html {
+    -webkit-text-size-adjust: 100%;
+  }
+  body {
+    background-color: var(--page);
+    color: var(--ink);
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    min-height: 100dvh;
+    -webkit-tap-highlight-color: transparent;
+  }
+  button {
+    touch-action: manipulation;
+    cursor: pointer;
+  }
+  button:disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
+  }
+}
